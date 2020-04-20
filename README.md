@@ -7,7 +7,7 @@ This is a react app that classifies books in three shelves named "Currently Read
 The MyReads App has two pages:
 
 - The MainPage which displays three shelves and a list of books corresponding books associated to that shelve and
-- The SearchPage from which you can search for a book and put an add to a shelve. 
+- The SearchPage from which you can search for a book an add to a shelve. 
 
 ## How to install & Run
 
