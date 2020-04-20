@@ -4,7 +4,7 @@ import SingleBook from "./SingleBook";
 
 class MainPage extends Component {
     render() {
-        const { books } = this.props;
+        const { books, updateBookShelf } = this.props;
         return (
             <div className="list-books">
                 <div className="list-books-title">
@@ -19,7 +19,7 @@ class MainPage extends Component {
                                     {books &&
                                         books
                                             .filter((book) => book.shelf === "currentlyReading")
-                                            .map((book) => <SingleBook key={book.id} book={book} />)}
+                                            .map((book) => <SingleBook key={book.id} book={book} updateBookShelf={updateBookShelf} />)}
                                 </ol>
                             </div>
                         </div>
@@ -28,7 +28,9 @@ class MainPage extends Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books &&
-                                        books.filter((book) => book.shelf === "wantToRead").map((book) => <SingleBook key={book.id} book={book} />)}
+                                        books
+                                            .filter((book) => book.shelf === "wantToRead")
+                                            .map((book) => <SingleBook key={book.id} book={book} updateBookShelf={updateBookShelf} />)}
                                 </ol>
                             </div>
                         </div>
@@ -36,7 +38,10 @@ class MainPage extends Component {
                             <h2 className="bookshelf-title">Read</h2>
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
-                                    {books && books.filter((book) => book.shelf === "read").map((book) => <SingleBook key={book.id} book={book} />)}
+                                    {books &&
+                                        books
+                                            .filter((book) => book.shelf === "read")
+                                            .map((book) => <SingleBook key={book.id} book={book} updateBookShelf={updateBookShelf} />)}
                                 </ol>
                             </div>
                         </div>
